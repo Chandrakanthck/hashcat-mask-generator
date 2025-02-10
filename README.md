@@ -68,7 +68,7 @@ set HASH_FILE=hash.hc22000
 4️⃣ Run the batch script:
 
 ```bat
-command.bat
+ExecuteMask.bat
 ```
 
 5️⃣ If a password is cracked, it will be displayed in `cracked.txt`.
