@@ -2,7 +2,7 @@
 
 ## 📌 Overview
 
-This repository contains a **Python script** to generate custom **Hashcat masks** dynamically based on user input. Additionally, a **batch script (`command.bat`)** is provided for easy execution of Hashcat using the generated mask files.
+This repository contains a **Python script** to generate custom **Hashcat masks** dynamically based on user input. Additionally, a **batch script (`ExecuteMask.bat`)** is provided for easy execution of Hashcat using the generated mask files.
 
 ---
 
@@ -62,7 +62,7 @@ set HASH_FILE=hash.hc22000
 
 ### 🔹 3. Run Hashcat with the Generated Masks
 
-1️⃣ Ensure `hashcat.exe` is in the **same directory** as `command.bat`.<br>
+1️⃣ Ensure `hashcat.exe` is in the **same directory** as `ExecuteMask.bat`.<br>
 2️⃣ Place your generated mask file (`Patterns_X_Mask.txt`) in the **same folder**.<br>
 3️⃣ Rename it to `masks.txt` **or update the batch file** to match your filename.<br>
 4️⃣ Run the batch script:
