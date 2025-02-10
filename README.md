@@ -9,9 +9,21 @@ This repository contains a **Python script** to generate custom **Hashcat masks*
 ## ✅ Features
 
 - 🔹 **Generate Hashcat-compatible masks dynamically**
-- 🔹 **Accepts custom words and user-defined mask length**
-- 🔹 **Saves the generated masks into a text file**
+- 🔹 **Enter custom words and define mask length**
+- 🔹 **Automatically save formatted mask patterns**
 - 🔹 **Batch script to automate Hashcat execution**
+
+---
+
+## 🔹 Why Use Masking Instead of Wordlists?
+
+- Creating a large wordlist takes **huge space and time**.
+- Wordlists contain many **unnecessary words** for the process.
+- Masking **shrinks the process**, generating combinations **on the fly**.
+- Each mask contains **many possible variations**, **no need for extra storage**.
+- This repository **simplifies the mask creation** for custom words/names with **numbers, special characters, uppercase, and lowercase combinations** using `?1` placement.
+- The included **batch file makes execution easy on Windows**, allowing seamless **GPU acceleration** for **fast parallel processing**.
+- Ensure you have the **necessary dependencies installed**, such as **CUDA Toolkit** for optimal Hashcat performance.
 
 ---
 
@@ -76,5 +88,4 @@ command.bat
 🚀 Feel free to **submit pull requests** or **suggest improvements**!
 
 💻 Happy Cracking! 🔥
-
 
