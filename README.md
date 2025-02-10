@@ -1,4 +1,3 @@
-# hashcat-mask-generator
 # Hashcat Mask Generator
 
 ## 📌 Overview
