@@ -43,7 +43,7 @@ python hashcat_mask_generator.py
 
 ---
 
-### 🔹 2. Edit the Batch Script (`command.bat`)
+### 🔹 2. Edit the Batch Script (`ExecuteMask.bat`)
 
 Modify the following sections **to fit your setup**:
 
