@@ -1,35 +1,42 @@
-# Function to generate patterns based on the number of ?1s
-def generate_patterns(words, mask):
+def generate_password_patterns():
+    # Step 1: Get input from the user
+    words_input = input("Enter words (comma-separated): ").strip()
+    num_placeholders = int(input("Enter the number of '?1' placeholders: ").strip())
+    
+    # Split the input words into a list
+    words = [word.strip() for word in words_input.split(",")]
+    
+    # Step 2: Define the variations for each word
+    def get_variations(word):
+        return [
+            word.lower(),          # Lowercase entire word
+            word.upper(),          # Uppercase entire word
+            word.capitalize(),     # Uppercase first letter, lowercase rest
+            word[0].lower() + word[1:].upper()  # Lowercase first letter, uppercase rest
+        ]
+    
+    # Step 3: Generate patterns for each word
     patterns = []
     for word in words:
-        patterns.extend([
-            f"{word}{mask}",
-            f"{word.upper()}{mask}",
-            f"{mask}{word}",
-            f"{mask}{word.upper()}",
-            f"?1{word}{mask[:-2]}",
-            f"?1{word.upper()}{mask[:-2]}",
-            f"?1?1{word}{mask[:-4]}",
-            f"?1?1{word.upper()}{mask[:-4]}",
-        ])
-    return patterns
+        variations = get_variations(word)
+        word_length = len(word)
+        total_length = word_length + num_placeholders
+        
+        # Generate all possible placements of the word within the total length
+        for variation in variations:
+            for start_pos in range(total_length - word_length + 1):
+                # Create the pattern with the word at the current position
+                pattern = ["?1"] * total_length
+                pattern[start_pos:start_pos + word_length] = list(variation)
+                patterns.append("".join(pattern))
+    
+    # Step 4: Save patterns to a text file
+    filename = "password_patterns.txt"
+    with open(filename, "w") as file:
+        for pattern in patterns:
+            file.write(pattern + "\n")  # Write each pattern on a new line
+    
+    print(f"\nAll {len(patterns)} patterns have been saved to '{filename}'.")
 
-# Get user input for words and ?1 mask length
-input_words = input("Enter words separated by commas: ").split(',')
-input_words = [word.strip() for word in input_words]
-mask_length = int(input("Enter the number of ?1 (e.g., 2, 3, 4): "))
-
-# Generate mask pattern based on user input
-mask = "?1" * mask_length
-patterns = generate_patterns(set(input_words), mask)
-
-# Save the patterns into a file
-def save_patterns_to_file(patterns, filename):
-    with open(filename, "w", encoding="utf-8") as file:
-        file.write("\n".join(patterns))
-
-output_filename = f"Patterns_{mask_length}_Mask.txt"
-save_patterns_to_file(patterns, output_filename)
-
-print(f"Pattern file '{output_filename}' generated successfully!")
-
+# Run the function
+generate_password_patterns()
