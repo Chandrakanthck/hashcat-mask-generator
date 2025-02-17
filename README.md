@@ -8,10 +8,10 @@ This repository contains a **Python script** to generate custom **Hashcat masks*
 
 ## ✅ Features
 
-- 🔹 **Generate Hashcat-compatible masks dynamically**
-- 🔹 **Enter custom words and define mask length**
-- 🔹 **Automatically save formatted mask patterns**
-- 🔹 **Batch script to automate Hashcat execution**
+🔹 **Generate Hashcat-compatible masks dynamically**
+🔹 **Enter custom words and define mask length**
+🔹 **Automatically save formatted mask patterns**
+🔹 **Batch script to automate Hashcat execution**
 
 ---
 
